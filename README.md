@@ -22,7 +22,10 @@ O site tem como objetivo fornecer todas as informações necessárias para os pa
 - **Frontend**: 
   - HTML5, CSS3, JavaScript
 
-- **Hospedagem**: [Heroku](https://www.heroku.com/) (ou outra plataforma de sua escolha)
+- **Hospedagem**: [Hostinger]
 
 - **Deploy Contínuo**: GitHub Actions para CI/CD
+
+## Atual Status
+- **Em construção, mais atualizações em breve**
 
