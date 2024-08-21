@@ -296,8 +296,7 @@ section.options {
 
 .sobre img {
     background-color: #eeeeee;
-    width: auto;
-    height: auto;
+    width: 15rem;
     display: flex;
     margin: auto auto 2vh auto;
     padding-top: 3vh;
@@ -312,7 +311,7 @@ section.options {
     }
 
     .sobre img {
-        width: auto;
+        width: 22rem;
         height: auto;
         margin-right: 4.5vh;
     }
@@ -411,7 +410,7 @@ section.options {
 .icon img {
     opacity: 85%;
     margin-top: 1vh;
-    max-width: 10vh; /* Define a largura máxima do ícone */
+    max-width: 7vh; /* Define a largura máxima do ícone */
     max-height: 7.5vh; /* Define a altura máxima do ícone */
     width: auto; /* Permite que a largura se ajuste automaticamente */
     height: auto; /* Permite que a altura se ajuste automaticamente */
@@ -530,31 +529,40 @@ section.options {
 
 /* GALERIA DE FOTOS DO LOCAL */
 
+.fotosProva {
+    column-count: 4;
+    column-gap: 0.6rem; /* Ajuste o valor para controlar o espaço entre as colunas */
+}
+
+.fotosProva img {
+    width: calc(100% - 0.6rem); /* Compensa o column-gap */
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    transition: transform 0.3s ease;
+    margin-left: 3px;
+}
+
+.fotosProva a {
+    display: inline-block; /* Garante que os links se comportem como blocos inline */
+    width: 100%;
+}
+
+.fotosProva img:hover {
+    transform: scale(1.025); /* Leve aumento na imagem */
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
     .fotosProva {
-        column-count: 4;
+        column-count: 3;
+        column-gap: 0.3rem; /* Diminui o espaço entre as colunas no mobile */
     }
 
-    .fotosProva img{
-        width: 100%;
-        border-radius: 4px;
-        margin-bottom: 0.3rem;
-        column-gap: 0.1rem;
-        transition: transform 0.3s ease;
+    .fotosProva img {
+        width: calc(100% - 0.3rem); /* Ajusta a largura para o novo column-gap */
     }
+}
 
-    .fotosProva a {
-        display: inline-block; /* Garante que os links se comportem como blocos inline */
-        width: 100%;
-    }
-
-    .fotosProva img:hover {
-        transform: scale(1.025); /* Leve aumento na imagem */
-    }   
-
-
-
-
-        /* INSCRITOS */
 
         /* INSCRITOS */
 
@@ -603,6 +611,53 @@ section.options {
         padding: 1.5rem;
     }
 }
+
+/* desenvolvido por */
+
+.dev {
+    text-align: center; /* Centraliza o texto */
+}
+
+.dev a {
+    color: white; /* Cor branca para o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-family: 'Arial', sans-serif; /* Altere para a fonte de sua escolha */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.dev a:hover {
+    color: #cccccc; /* Muda a cor ao passar o mouse */
+    transition: color 0.3s ease-in-out; /* Animação suave na transição de cores */
+}
+
+/* dowload regulamento */
+
+#downloadPDF {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff0000;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  
+  #downloadPDF:hover {
+    background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
+    color: #ffffff; /* Cor do texto */
+  }
+  
+
+  
 
   
 
