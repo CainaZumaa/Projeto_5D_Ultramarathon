@@ -1,0 +1,716 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Playwrite IS", cursive;
+}
+
+        /* Primeiro Header Logotipo (Responsivo) */
+
+/* Contêiner do Logotipo */
+.logo-container {
+    background-color: #acacac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logotipo */
+img.logo5D {
+    width: 50%;
+    display: block;
+    margin: 1vh auto 1vh;
+}
+
+/* Logotipo resposivo mobile */
+@media (min-width: 600px) {
+    img.logo5D {
+        width: 30%; /* Ajuste para tablets */
+    }
+}
+
+/* Logotipo responsivo desktop*/
+@media (min-width: 900px) {
+    img.logo5D {
+        width: 15%; /* Ajuste para desktops */
+    }
+}
+
+        /* Header Opções (Responsivo) */
+
+section.options {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    background-color: rgb(0, 0, 0);
+    padding: 2vh 0;
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu a {
+    display: block; 
+    text-decoration: none; 
+    color: white; 
+    padding: 2.5vh; 
+    font-weight: bold;
+}
+
+.menu a:hover {
+    transition: all .2s ease-in-out; 
+    transform: scale(1.2); 
+}
+
+@media (min-width: 900px) {
+    .menu {
+        display: flex;
+        justify-content: space-around;
+        width: 100%; 
+    }
+}
+
+@media (min-width: 900px) {
+    .menu a{
+        padding: 10px; /* Espaçamento interno */
+        flex: 1; /* Faz com que os itens ocupem espaço igual dentro de .menu */
+        text-align: center; /* Centraliza o texto horizontalmente */
+    }
+}
+        /*  Slider */
+        
+        .slider {
+            margin: 0 auto;
+            width: 100%;
+            overflow: hidden;
+            position: relative; /* Torna o contêiner posicionado relativamente para permitir posicionamento absoluto dos botões */
+        }
+        
+        .slides {
+            width: 300%; /* Corrigido para ajustar a largura de acordo com o número de slides */
+            height: 12rem;
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Adiciona transição suave */
+        }
+        
+        .slider input {
+            display: none;
+        }
+        
+        .slide {
+            width: 33.33%; /* Ajustado para acomodar 3 slides */
+            position: relative;
+            transition: 1.5s;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%; /* Garante que a imagem ocupe todo o contêiner */
+            object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+        }
+        
+        .manual-navigation {
+            position: absolute;
+            width: 100%; /* Alinha os botões ao centro */
+            bottom: 10%; /* Posiciona os botões na parte inferior do slider */
+            display: flex;
+            justify-content: center;
+            gap: 5%; /* Espaçamento entre os botões */
+        }
+        
+        .manual-btn {
+            border: 2px solid #dadada71;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            background-color: #dadada71; /* Torna os botões visíveis */
+            transition: 0.75s;
+        }
+        
+        /* Adicionando estilos para botões de navegação automática */
+        .navigation-auto {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 5%;
+            bottom: 10%;
+        }
+        
+        .navigation-auto div {
+            border: 2px solid #5a5a5a;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: #5a5a5a;
+        }
+
+        .manual-btn:not(:last-child) {
+            margin-right: 0;
+        }
+
+        .manual-btn:hover {
+            border: 2px solid #5a5a5a;
+            background-color: #5a5a5a;
+        }
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -33.3%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -66.65%;
+}
+
+.navigation-auto div {
+    border: 2px solid #aaaaaa;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.75s;
+}
+
+.navigation-auto {
+    position: absolute;
+    width: 100%;
+    margin-top: 360px;
+    display: flex;
+    justify-content: center;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #5a5a5a;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #5a5a5a;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #5a5a5a;
+}
+
+/* Estilo geral para a imagem */
+.slide img {
+    width: 100%;
+    height: auto; 
+    max-width: 100%;
+    display: block;
+    object-fit: contain; /* Ajusta a imagem para caber dentro do contêiner sem cortar */
+    margin: auto; /* Centraliza a imagem */
+}
+
+
+/* Responsividade Slider */
+
+/* Telas até 380px */
+@media (max-width: 360px) {
+    .slide img {
+        width: 100%; /* Garante que a imagem se ajuste à largura do contêiner */
+        height: auto; /* Mantém a proporção da imagem */
+        object-fit: cover; /* Ajusta a imagem dentro do contêiner sem distorcer */
+    }
+
+    .manual-navigation, .navigation-auto {
+        margin-bottom: 10%; /* Ajusta a posição dos controles de navegação */
+        display: flex; /* Garante que os controles sejam exibidos como flexíveis */
+        justify-content: center; /* Centraliza os botões */
+    }
+
+}
+
+/* Telas pequenas (mobile first) */
+@media (max-width: 600px) {
+    .slide img {
+        width: 100%;
+        height: 100%; /* Mantém a proporção da imagem */
+        object-fit: cover; /* Ajusta a imagem dentro do contêiner sem distorcer */
+    }
+
+    .manual-navigation, .navigation-auto {
+        bottom: 5%; /* Ajusta a posição para acompanhar a responsividade */
+    }
+}
+
+/* Telas médias (tablets e pequenos desktops) */
+@media (min-width: 601px) and (max-width: 1250px) {
+    .slides {
+        width: 300%;
+        height: 35rem; 
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .manual-navigation, .navigation-auto {
+        bottom: 5%;
+    }
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1250px) {
+    .slides {
+        width: 300%;
+        height: 35rem; 
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        
+    }
+
+    .manual-navigation, .navigation-auto {
+        bottom: 5%;
+    }
+}
+
+        /* Sobre */
+
+.separator {
+    width: 100%;
+    height: 3px;
+    background-color: #cecece;
+}
+
+.sobre {
+    background-color: #eeeeee;
+}
+
+.sobre p{
+    font-family: Raleway;
+    font-size: 2vh;
+    margin: 0 4.5vh 0 4.5vh;
+    color: black;
+    text-align: justify;
+    background-color: #eeeeee;
+    padding-bottom: 5%;
+}
+
+.sobre img {
+    background-color: #eeeeee;
+    width: 15rem;
+    display: flex;
+    margin: auto auto 2vh auto;
+    padding-top: 3vh;
+}
+
+/* Telas grandes (desktops) */
+@media (min-width: 1250px) {
+    .sobre {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sobre img {
+        width: 22rem;
+        height: auto;
+        margin-right: 4.5vh;
+    }
+
+    .sobre p {
+        padding-right: 10%;
+        width: 50%;
+        margin: 0;
+    }
+}
+
+.separatorTwo {
+    width: 100%;
+    height: 3px;
+    background-color: #5a5a5a;
+    margin-bottom: 3vh;
+}
+
+
+        /* Sponsors  */
+
+/* Container dos patrocinadores */
+.sponsors {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha, se necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 5%; /* Adiciona espaçamento de 10% entre as imagens */
+}
+
+/* Estilos gerais para imagens dentro da classe sponsors */
+.sponsors a img {
+    max-width: 28vh; /* Mantém a proporção da imagem */
+    max-height: 28vh; /* Mantém a proporção da imagem */
+    margin: 2vh; /* Adiciona algum espaço ao redor das imagens */
+    border-radius: 9rem;
+    cursor: pointer;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 600px) {
+    .sponsors a img {
+        max-width: 60%;
+        margin: 1rem auto 1rem auto;
+        display: block;
+    }
+}
+
+
+
+.separatorThree {
+    width: 100%;
+    height: 1vh;
+    background-color: #5a5a5a;
+}
+
+/* Estilo geral para o footer */
+.footer {
+    margin-top: 3rem;
+    background: linear-gradient(to bottom, #5a5a5a, #0e0e0e); /* Gradiente preto */
+    color: rgb(255, 255, 255); /* Cor do texto */
+    padding: 2vh 0; /* Espaçamento interno */
+    text-align: center; /* Alinhamento centralizado do texto */
+    width: 100%; /* Garante que o footer ocupe toda a largura */
+}
+
+/* Container do conteúdo do footer */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+/* Estilo para o título 'Endereço' */
+.footer h3 {
+    font-family: Raleway;
+    font-size: 2vh;
+    margin-bottom: 1vh;
+}
+
+/* Estilo para o subtítulo */
+.footer h4 {
+    font-family: Raleway;
+    font-size: 1.5vh;
+    margin-bottom: 1.5vh;
+}
+
+/* Estilo para o texto do endereço */
+.footer p {
+    font-family: Raleway;
+    font-size: 1.5vh;
+    margin-bottom: 1vh;
+}
+
+.icon img {
+    opacity: 85%;
+    margin-top: 1vh;
+    max-width: 7vh; /* Define a largura máxima do ícone */
+    max-height: 7.5vh; /* Define a altura máxima do ícone */
+    width: auto; /* Permite que a largura se ajuste automaticamente */
+    height: auto; /* Permite que a altura se ajuste automaticamente */
+}
+
+    /* A CORRIDA */
+
+#corrida {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding: 2rem;
+    font-size: 3.5rem;
+    color: #ffffff; /* Cor do texto */
+    background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 0.2rem; /* Espaçamento entre letras */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave para transformações */
+}
+
+#pCorrida {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    font-size: 1rem;
+    color: #2b2b2b; /* Cor do texto cinza escuro */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+
+@media (min-width: 1250px) {
+    #pCorrida {
+        font-size: 1.25rem;
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+    #corrida {
+        font-size: 5rem;
+    }
+}
+
+        /* Regulamento */
+
+        #regulamento {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            padding: 2rem;
+            font-size: 2.5rem;
+            color: #ffffff; /* Cor do texto */
+            background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente */
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 0.2rem; /* Espaçamento entre letras */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave para transformações */
+        }
+        
+        #pRegulamento {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1rem;
+            color: #2b2b2b; /* Cor do texto cinza escuro */
+            line-height: 1.5; /* Altura da linha para melhor legibilidade */
+            margin: 0 auto; /* Centraliza o parágrafo */
+        }
+        
+        @media (min-width: 1250px) {
+            #pRegulamento {
+                font-size: 1.25rem;
+                padding-right: 10rem;
+                padding-left: 10rem;
+            }
+            #regulamento {
+                font-size: 4.55rem;
+            }
+        }
+
+        /* O LOCAL */
+
+        #local {
+            font-family: 'Raleway', sans-serif;
+            text-align: center;
+            padding: 2rem;
+            font-size: 3.5rem;
+            color: #ffffff; /* Cor do texto */
+            background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra mais proeminente */
+            text-transform: uppercase; /* Letras maiúsculas */
+            letter-spacing: 0.2rem; /* Espaçamento entre letras */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transição suave para transformações */
+        }
+        
+        #pLocal {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1rem;
+            color: #2b2b2b; /* Cor do texto cinza escuro */
+            line-height: 1.5; /* Altura da linha para melhor legibilidade */
+            margin: 0 auto; /* Centraliza o parágrafo */
+        }
+        
+        @media (min-width: 1250px) {
+            #pLocal {
+                font-size: 1.25rem;
+                padding-right: 10rem;
+                padding-left: 10rem;
+            }
+            #local {
+                font-size: 5rem;
+            }
+        }
+
+/* GALERIA DE FOTOS DO LOCAL */
+
+.fotosProva {
+    column-count: 4;
+    column-gap: 0.6rem; /* Ajuste o valor para controlar o espaço entre as colunas */
+}
+
+.fotosProva img {
+    width: calc(100% - 0.6rem); /* Compensa o column-gap */
+    border-radius: 4px;
+    margin-bottom: 0.3rem;
+    transition: transform 0.3s ease;
+    margin-left: 3px;
+}
+
+.fotosProva a {
+    display: inline-block; /* Garante que os links se comportem como blocos inline */
+    width: 100%;
+}
+
+.fotosProva img:hover {
+    transform: scale(1.025); /* Leve aumento na imagem */
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .fotosProva {
+        column-count: 3;
+        column-gap: 0.3rem; /* Diminui o espaço entre as colunas no mobile */
+    }
+
+    .fotosProva img {
+        width: calc(100% - 0.3rem); /* Ajusta a largura para o novo column-gap */
+    }
+}
+
+
+        /* INSCRITOS */
+
+#tabelaInscritos {
+    width: 95%;
+    max-width: 120rem;
+    border-collapse: collapse;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+#tabelaInscritos thead {
+    background-color: #333;
+    color: #fff;
+}
+
+#tabelaInscritos th, #tabelaInscritos td {
+    padding: 1rem;
+    text-align: center; 
+    border-bottom: 1px solid #ddd;
+    font-family: "Helvetica";
+    font-weight: bold;
+}
+
+#tabelaInscritos th {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+#tabelaInscritos tbody tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+#tabelaInscritos tbody tr:hover {
+    background-color: #c70000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.35s ease-in-out;
+}
+
+@media (min-width: 768px) {
+    #tabelaInscritos th, #tabelaInscritos td {
+        padding: 1.5rem;
+    }
+}
+
+/* desenvolvido por */
+
+.dev {
+    text-align: center; /* Centraliza o texto */
+}
+
+.dev a {
+    color: white; /* Cor branca para o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-family: 'Arial', sans-serif; /* Altere para a fonte de sua escolha */
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.dev a:hover {
+    color: #cccccc; /* Muda a cor ao passar o mouse */
+    transition: color 0.3s ease-in-out; /* Animação suave na transição de cores */
+}
+
+/* dowload regulamento */
+
+#downloadPDF {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff0000;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  
+  #downloadPDF:hover {
+    background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
+    color: #ffffff; /* Cor do texto */
+  }
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+        
+        
+
+    
+    
+
+
+
+
+
+
