@@ -285,7 +285,7 @@ section.options {
 }
 
 .sobre p{
-    font-family: Raleway;
+    font-family: Helvetica, sans-serif;
     font-size: 2vh;
     margin: 0 4.5vh 0 4.5vh;
     color: black;
@@ -317,6 +317,7 @@ section.options {
     }
 
     .sobre p {
+        font-family: Helvetica, sans-serif;
         padding-right: 10%;
         width: 50%;
         margin: 0;
@@ -402,7 +403,7 @@ section.options {
 
 /* Estilo para o texto do endereço */
 .footer p {
-    font-family: Raleway;
+    font-family: Helvetica, sans-serif;
     font-size: 1.5vh;
     margin-bottom: 1vh;
 }
@@ -655,6 +656,11 @@ section.options {
     background: linear-gradient(45deg, #C70000, #FFD700); /* Fundo gradiente */
     color: #ffffff; /* Cor do texto */
   }
+
+  #organization {
+    text-align: center; /* Centraliza o texto horizontalmente */
+}
+
   
 
   
