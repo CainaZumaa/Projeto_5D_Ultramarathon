@@ -96,5 +96,9 @@ buttons.forEach((button, index) => {
     });
 });
 
+window.onload = function() {
+    document.getElementById("inicioTexto").scrollIntoView();
+};
+
 
 

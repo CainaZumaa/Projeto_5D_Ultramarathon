@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     font-family: "Playwrite IS", cursive;
+    scroll-behavior: smooth;
 }
 
         /* Primeiro Header Logotipo (Responsivo) */
@@ -348,8 +349,27 @@ section.options {
     max-width: 28vh; /* Mantém a proporção da imagem */
     max-height: 28vh; /* Mantém a proporção da imagem */
     margin: 2vh; /* Adiciona algum espaço ao redor das imagens */
-    border-radius: 9rem;
+    border-radius: 50%;
+    justify-content: space-between;
     cursor: pointer;
+}
+
+/* Media query para telas com largura máxima de 600px */
+@media (max-width: 600px) {
+    .sponsors a img {
+        max-height: 35vh; /* Ajuste a altura proporcionalmente */
+    }
+
+    .sponsors a.dif img {
+        border-radius: 12.5%; /* Específico para imagens com a classe "dif" */
+        max-width: 19vh;
+        max-height: 23vh; /* Ajuste a altura proporcionalmente */
+    }
+}
+
+
+.sponsors a.dif img {
+    border-radius: 12.5%; /* Específico para imagens com a classe "dif" */
 }
 
 /* Estilos para telas menores */
