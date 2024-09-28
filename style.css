@@ -1,7 +1,6 @@
 * {
     padding: 0px;
     margin: 0px;
-    font-family: "Playwrite IS", cursive;
     scroll-behavior: smooth;
 }
 
@@ -48,6 +47,7 @@ section.options {
 
 .menu {
     text-align: center;
+    font-family: "Playwrite IS", cursive;
 }
 
 .menu a {
@@ -679,3 +679,37 @@ section.options {
   #organization {
     text-align: center; /* Centraliza o texto horizontalmente */
 }
+
+.podcast {
+    font-family: "Playwrite IS", cursive;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    z-index: 100;
+    
+        .podcastTitle{
+            margin-bottom: 2rem;
+        }
+
+    @media (max-width: 600px) {
+        .podcastTitle{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.youtubePlayer iframe {
+    width: 720px;
+    height: 405px;
+    margin-bottom: 5rem;
+    border: 5px solid #cecece83;
+    border-radius: 5px;
+
+    @media (max-width: 600px) {
+        width: 400px;
+        height: 225px;
+        margin-bottom: 1rem;
+    }
+}
+
+
+
+
